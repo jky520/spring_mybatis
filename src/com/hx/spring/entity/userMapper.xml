@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hx.spring.dao.UserDao">
+	<resultMap type="User" id="userResultMap">
+		<id column="id" property="id"/>
+		<result column="user_name" property="userName"/>
+		<result column="pass_word" property="passWord"/>
+		<result column="nick_name" property="nickName"/>
+		<result column="email" property="email"/>
+	</resultMap>
+	<insert id="add" parameterType="User">
+		insert into t_user(user_name, pass_word, nick_name, email) 
+		values(#{userName},#{passWord},#{nickName},#{email})
+	</insert>
+</mapper>
